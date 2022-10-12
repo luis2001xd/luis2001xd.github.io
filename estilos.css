@@ -127,6 +127,7 @@ body{
   text-align: center;
   font-weight: 600;
   line-height: 1.4em;
+
 }
 
 .profile h2 span{
@@ -159,11 +160,33 @@ body{
 
 .tittle2
 {
+  width: 0;
+  overflow: hidden;
+  border-right: .15em solid #18BDEC;
+  white-space: nowrap;
   color: #003147;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  animation: typing 4s steps(60) 1s 1 normal both, blink 1s steps(1) infinite;
 
+}
+
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 p{
@@ -175,4 +198,23 @@ li{
 
 .intereses ul li{
   list-style: none;
+}
+
+@media (max-width: 1000px)
+{
+  .container
+  {
+    margin: 10px;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .intereses ul{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px)
+{
+  .about {
+    flex-direction: column;
+  }
 }
